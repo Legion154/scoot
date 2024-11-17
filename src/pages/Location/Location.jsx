@@ -1,7 +1,7 @@
-import React from 'react'
-import bg from '../../assets/careers-locationBg.png'
-import eclipse from '../../assets/eclipses.png'
-import map from '../../assets/mapLocation.png'
+import React from "react"
+import bg from "../../assets/careers-locationBg.png"
+import eclipse from "../../assets/eclipses.png"
+import map from "../../assets/mapLocation.png"
 
 const Location = () => {
   return (
