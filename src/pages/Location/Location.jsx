@@ -5,7 +5,7 @@ import map from "../../assets/mapLocation.png"
 
 const Location = () => {
   return (
-    <div>Location</div>
+    <main className="py-4 px-3 sm:px-5 2xl:px-40">Location</main>
   )
 }
 

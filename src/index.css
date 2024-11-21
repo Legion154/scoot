@@ -4,6 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
 body {
   position: relative;
 }
@@ -14,11 +25,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: white;
+  background: #fcb72b;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fcb72b;
+  background: white;
 }
 
 .active {

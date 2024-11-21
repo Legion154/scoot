@@ -44,7 +44,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="hidden md:block">
-          <Button />
+          <Button name={"Get scootin"} />
         </div>
         <i
           onClick={sidebar}
@@ -78,7 +78,7 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-        <Button />
+        <Button name={"Get scootin"} />
       </div>
 
       {/* OVERLAY */}

@@ -11,9 +11,6 @@ export default {
         accent3: "#FCB72B",
       },
     },
-    container: {
-      center: true,
-    },
     fontFamily: {
       space_mono: "Space Mono",
     },
