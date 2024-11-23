@@ -12,7 +12,9 @@ import leftHome from "../../assets/leftArrow.svg"
 
 const Home = () => {
   return (
-    <main className="py-4 px-3 sm:px-5 2xl:px-40">Home</main>
+    <main className="py-4 px-3 sm:px-5 2xl:px-40">
+      <h1>Abdusamad Bot</h1>
+    </main>
   )
 }
 
