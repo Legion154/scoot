@@ -73,6 +73,9 @@ const Home = () => {
           </div>
         </div>
           <div className=" hidden md:flex absolute z-[-1] left-0 top-[93px] w-[1100px] h-[15px]  bg-[#E5ECF4]"></div>
+          <div className="absolute bottom-0">
+            <img src={eclipse} alt="" />
+          </div>
       </section>
     </main>
   );
