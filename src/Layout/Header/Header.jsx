@@ -8,6 +8,7 @@ const Header = () => {
     return localStorage.getItem("theme") === "true";
   });
   useEffect(() => {
+    localStorage.setItem("theme", dark);
     if (dark) {
       document.body.classList.add("dark");
     } else {
@@ -18,7 +19,6 @@ const Header = () => {
   const mode = () => {
     setDark((prevstate) => {
       const newState = !prevstate;
-      localStorage.setItem("darkMode", newState);
       if (newState) {
         document.body.classList.add("dark");
       } else {
@@ -67,16 +67,22 @@ const Header = () => {
           </ul>
         </div>
         <div className="hidden md:flex flex-row items-center gap-10">
-          <i className="fa-solid fa-circle-half-stroke text-2xl text-secondary cursor-pointer"></i>
+          <i
+            onClick={mode}
+            className="fa-solid fa-circle-half-stroke text-2xl text-secondary cursor-pointer"
+          ></i>
           <Button name={"Get scootin"} />
         </div>
-        <div className="flex flex-row items-center gap-7 cursor-pointer">
-          <i onClick={mode} className="fa-solid fa-circle-half-stroke text-2xl text-secondary"></i>
+        <div className="flex md:hidden flex-row items-center gap-7 cursor-pointer">
+          <i
+            onClick={mode}
+            className="fa-solid fa-circle-half-stroke text-2xl text-secondary cursor-pointer"
+          ></i>
           <i
             onClick={sidebar}
             className={`${
               open ? "fa-xmark pr-[5px]" : "fa-bars pr-0"
-            } fa-solid fa-bars text-2xl cursor-pointer text-secondary block md:hidden`}
+            } fa-solid fa-bars text-2xl cursor-pointer text-secondary `}
           ></i>
         </div>
       </div>
@@ -85,25 +91,19 @@ const Header = () => {
 
       <div
         className={`${
-          open ? "h-56 px-3 py-5" : "h-0 px-0 py-0"
+          open ? "h-60 px-3 py-5" : "h-0 px-0 py-0"
         } fixed z-30 top-16 left-0 w-full bg-primary flex-col select-none md:hidden overflow-hidden duration-300`}
       >
-        <ul className="flex flex-col items-center gap-5 sm:text-lg text-accent1 font-bold">
-          <li>
-            <Link onClick={closeSidebar} to={"/about"}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link onClick={closeSidebar} to={"/location"}>
-              Location
-            </Link>
-          </li>
-          <li>
-            <Link onClick={closeSidebar} to={"/careers"}>
-              Careers
-            </Link>
-          </li>
+        <ul className="flex flex-col items-center gap-1 sm:text-lg text-accent1 font-bold">
+          <Link onClick={closeSidebar} to={"/about"} className="active:bg-accent4 duration-300 cursor-pointer w-full py-2 text-center rounded-md">
+            About
+          </Link>
+          <Link onClick={closeSidebar} to={"/location"} className="active:bg-accent4 duration-300 cursor-pointer w-full py-2 text-center rounded-md">
+            Location
+          </Link>
+          <Link onClick={closeSidebar} to={"/careers"} className="active:bg-accent4 duration-300 cursor-pointer w-full py-2 text-center rounded-md">
+            Careers
+          </Link>
         </ul>
         <div className="mt-7 flex items-center justify-center">
           <Button name={"Get scootin"} wfull={true} />
