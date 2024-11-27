@@ -1,4 +1,3 @@
-import React from "react";
 import { Home, About, Careers, Location } from "./pages";
 import Layout from "./Layout/Layout";
 import { Route, Routes } from "react-router-dom";

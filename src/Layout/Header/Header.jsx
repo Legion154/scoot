@@ -1,9 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../../components/Button";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [dark, setDark] = useState(() => {
+    return localStorage.getItem("theme") === "true";
+  });
+  useEffect(() => {
+    if (dark) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [dark]);
+
+  const mode = () => {
+    setDark((prevstate) => {
+      const newState = !prevstate;
+      localStorage.setItem("darkMode", newState);
+      if (newState) {
+        document.body.classList.add("dark");
+      } else {
+        document.body.classList.remove("dark");
+      }
+      return newState;
+    });
+  };
 
   const sidebar = () => {
     setOpen((prevstate) => {
@@ -23,8 +46,8 @@ const Header = () => {
   };
 
   return (
-    <main className="sticky top-0 z-30 py-4 px-3 sm:px-5 2xl:px-40 bg-primary border-b-2 border-b-accent1">
-      <div className="flex flex-row items-center justify-between ">
+    <main className="sticky top-0 z-30">
+      <div className="py-4 px-3 sm:px-5 2xl:px-40 bg-primary border-b-2 border-b-accent1 flex flex-row items-center justify-between duration-300">
         <div className="flex flex-row items-center md:gap-10 lg:gap-20">
           <h1 className="text-4xl font-bold text-secondary select-none">
             <Link onClick={closeSidebar} to={"/"}>
@@ -43,15 +66,19 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:flex flex-row items-center gap-10">
+          <i className="fa-solid fa-circle-half-stroke text-2xl text-secondary cursor-pointer"></i>
           <Button name={"Get scootin"} />
         </div>
-        <i
-          onClick={sidebar}
-          className={`${
-            open ? "fa-xmark pr-[5px]" : "fa-bars pr-0"
-          } fa-solid fa-bars text-2xl cursor-pointer text-secondary block md:hidden`}
-        ></i>
+        <div className="flex flex-row items-center gap-7 cursor-pointer">
+          <i onClick={mode} className="fa-solid fa-circle-half-stroke text-2xl text-secondary"></i>
+          <i
+            onClick={sidebar}
+            className={`${
+              open ? "fa-xmark pr-[5px]" : "fa-bars pr-0"
+            } fa-solid fa-bars text-2xl cursor-pointer text-secondary block md:hidden`}
+          ></i>
+        </div>
       </div>
 
       {/* SIDEBAR */}

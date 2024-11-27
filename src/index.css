@@ -10,6 +10,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #ffffff;
+  --secondary: #495567;
+}
+
+.dark {
+  --primary: #495567;
+  --secondary: #ffffff;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1600px;
