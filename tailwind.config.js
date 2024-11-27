@@ -9,6 +9,7 @@ export default {
         accent1: "#939CAA",
         accent2: "#E5ECF4",
         accent3: "#FCB72B",
+        accent4: "#F2F5F9",
       },
     },
     fontFamily: {
