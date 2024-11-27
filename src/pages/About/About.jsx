@@ -1,7 +1,7 @@
 import React from "react";
 import bg from "../../assets/aboutBg.png";
 import mobility from "../../assets/mobilityAbout.png";
-import urbanABout from "../../assets/urbanABout.png";
+import urban from "../../assets/urban.png"
 import tech from "../../assets/tech.png";
 import integrity from "../../assets/integrity.png";
 import commmunity from "../../assets/community.png";
@@ -67,7 +67,7 @@ const About = () => {
           </div>
           <span className="flex flex-row items-center relative">
             <img
-              src={urbanABout}
+              src={urban}
               alt="example picture"
               className="rounded-full relative w-60 2xl:w-[700px]"
             />
