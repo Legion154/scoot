@@ -1,7 +1,7 @@
 import React from "react";
 import bg from "../../assets/aboutBg.png";
 import mobility from "../../assets/mobilityAbout.png";
-import urbanAbout from "../../assets/urbanABout.png";
+import urbanABout from "../../assets/urbanABout.png";
 import tech from "../../assets/tech.png";
 import integrity from "../../assets/integrity.png";
 import commmunity from "../../assets/community.png";
@@ -67,7 +67,7 @@ const About = () => {
           </div>
           <span className="flex flex-row items-center relative">
             <img
-              src={urbanAbout}
+              src={urbanABout}
               alt="example picture"
               className="rounded-full relative w-60 2xl:w-[700px]"
             />
@@ -142,13 +142,10 @@ const About = () => {
           {/* SECOND PART */}
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-0">
             <h1 className="text-secondary font-bold text-4xl w-1/2 text-center lg:text-start">
-            Safe driving
+              Safe driving
             </h1>
             <div className="flex flex-col gap-5 w-full">
-              <Summary
-                title={"Should I wear a helmet?"}
-                describtion={false}
-              />
+              <Summary title={"Should I wear a helmet?"} describtion={false} />
               <Summary
                 title={"How about the rules & regulations?"}
                 describtion={false}
